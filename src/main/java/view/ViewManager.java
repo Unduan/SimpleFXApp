@@ -1,6 +1,9 @@
 package view;
 
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -21,5 +24,6 @@ public class ViewManager {
 
     public Stage getMainStage() {
         return mainStage;
+
     }
 }
