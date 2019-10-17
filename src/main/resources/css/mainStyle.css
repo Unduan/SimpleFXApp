@@ -1,0 +1,7 @@
+#mainPanel{
+    -fx-background-image: url(../image/darkPurple.png);
+    -fx-background-repeat: repeat;
+    -fx-background-size: 256 256;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
