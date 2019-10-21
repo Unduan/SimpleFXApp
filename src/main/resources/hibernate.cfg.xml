@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">hduhmyljzowjjm</property>
+        <property name="hibernate.connection.password">7d2b18818d1342b2c217a8d03015f65aa7e380cd64ab5b8becf16df3a302a4c2</property>
+        <property name="hibernate.connection.url">jdbc:postgresql:ec2-54-246-92-116.eu-west-1.compute.amazonaws.com:5432/dcggh7lkreobku</property>
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hbm2ddl.auto">create</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <mapping class="pl.sda.domain.Event" />
+        <mapping class="pl.sda.domain.Player" />
+        <mapping class="pl.sda.domain.Stadium" />
+        <mapping class="pl.sda.domain.Team" />
+    </session-factory>
+</hibernate-configuration>
