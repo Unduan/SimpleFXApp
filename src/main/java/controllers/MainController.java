@@ -16,6 +16,7 @@ public class MainController {
 
     @FXML
     private void removeFocusFromButton(ActionEvent actionEvent) {
+
         mainScreenPanel.requestFocus();
     }
 
@@ -25,6 +26,7 @@ public class MainController {
 
     @FXML
     private void pressedOnButton(MouseEvent mouseEvent) {
+
         mainScreenPanel.requestFocus();
     }
 
@@ -33,36 +35,36 @@ public class MainController {
     }
 
     @FXML
-    public void goToNewGamePanel(MouseEvent mouseEvent) {
+    private void goToNewGamePanel(MouseEvent mouseEvent) {
         paneNewGame.setVisible(true);
         paneLoadGame.setVisible(false);
         paneOptions.setVisible(false);
         paneScoreBoard.setVisible(false);
 
     }
-
-    public void goToLoadPanel(MouseEvent mouseEvent) {
+    @FXML
+    private void goToLoadPanel(MouseEvent mouseEvent) {
         paneNewGame.setVisible(false);
         paneLoadGame.setVisible(true);
         paneOptions.setVisible(false);
         paneScoreBoard.setVisible(false);
     }
-
-    public void goToOptions(MouseEvent mouseEvent) {
+    @FXML
+    private void goToOptions(MouseEvent mouseEvent) {
         paneNewGame.setVisible(false);
         paneLoadGame.setVisible(false);
         paneOptions.setVisible(true);
         paneScoreBoard.setVisible(false);
     }
-
-    public void goToScoreBoard(MouseEvent mouseEvent) {
+    @FXML
+    private void goToScoreBoard(MouseEvent mouseEvent) {
         paneNewGame.setVisible(false);
         paneLoadGame.setVisible(false);
         paneOptions.setVisible(false);
         paneScoreBoard.setVisible(true);
     }
-
-    public void goToExitGame(MouseEvent mouseEvent) {
+    @FXML
+    private void goToExitGame(MouseEvent mouseEvent) {
         Platform.exit();
 
 
