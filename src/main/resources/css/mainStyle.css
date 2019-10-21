@@ -8,4 +8,19 @@
 .menuButton{
     /*-fx-background-image: url(../image/grey_button15.png);*/
     -fx-background-radius: 10 10 10 10;
+
+}
+
+#optionsPanel {
+    -fx-background-color: gold
+}
+#scoreBoardPanel{
+    -fx-background-color: green
+}
+#newGamePanel{
+    -fx-background-color: blue
+}
+#loadGamePanel{
+    -fx-background-color: red
+
 }

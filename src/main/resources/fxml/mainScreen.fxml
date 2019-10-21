@@ -2,13 +2,18 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="mainPanel" fx:id="mainScreenPanel" prefHeight="750.0" prefWidth="900.0" stylesheets="@../css/mainStyle.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+<AnchorPane id="mainPanel" fx:id="mainScreenPanel" prefHeight="750.0" prefWidth="900.0" stylesheets="@../css/mainStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
    <children>
-      <Button layoutX="52.0" layoutY="39.0" mnemonicParsing="false" onAction="#removeFocusFromButton" onMouseEntered="#enteredOnButton" onMousePressed="#pressedOnButton" onMouseReleased="#releasedOnButton" prefHeight="47.0" prefWidth="157.0" styleClass="menuButton" stylesheets="@../css/mainStyle.css" text="Button" />
-      <Button layoutX="247.0" layoutY="39.0" mnemonicParsing="false" onAction="#removeFocusFromButton" onMouseEntered="#enteredOnButton" onMousePressed="#pressedOnButton" onMouseReleased="#releasedOnButton" prefHeight="47.0" prefWidth="157.0" styleClass="menuButton" stylesheets="@../css/mainStyle.css" text="Button" />
-      <Button layoutX="467.0" layoutY="39.0" mnemonicParsing="false" onAction="#removeFocusFromButton" onMouseEntered="#enteredOnButton" onMousePressed="#pressedOnButton" onMouseReleased="#releasedOnButton" prefHeight="47.0" prefWidth="157.0" styleClass="menuButton" stylesheets="@../css/mainStyle.css" text="Button" />
-      <Button layoutX="674.0" layoutY="39.0" mnemonicParsing="false" onAction="#removeFocusFromButton" onMouseEntered="#enteredOnButton" onMousePressed="#pressedOnButton" onMouseReleased="#releasedOnButton" prefHeight="47.0" prefWidth="157.0" styleClass="menuButton" stylesheets="@../css/mainStyle.css" text="Button" />
-      <Button layoutX="701.0" layoutY="644.0" mnemonicParsing="false" onAction="#removeFocusFromButton" onMouseEntered="#enteredOnButton" onMousePressed="#pressedOnButton" onMouseReleased="#releasedOnButton" prefHeight="47.0" prefWidth="157.0" styleClass="menuButton" stylesheets="@../css/mainStyle.css" text="Button" />
+      <Button fx:id="btnNewGame" layoutX="52.0" layoutY="39.0" mnemonicParsing="false" onAction="#removeFocusFromButton" onMouseClicked="#goToNewGamePanel" onMouseEntered="#enteredOnButton" onMousePressed="#pressedOnButton" onMouseReleased="#releasedOnButton" prefHeight="47.0" prefWidth="157.0" styleClass="menuButton" stylesheets="@../css/mainStyle.css" text="Nowa Gra" />
+      <Button fx:id="btnLoadGame" layoutX="247.0" layoutY="39.0" mnemonicParsing="false" onAction="#removeFocusFromButton" onMouseClicked="#goToLoadPanel" onMouseEntered="#enteredOnButton" onMousePressed="#pressedOnButton" onMouseReleased="#releasedOnButton" prefHeight="47.0" prefWidth="157.0" styleClass="menuButton" stylesheets="@../css/mainStyle.css" text="Wczytaj grę" />
+      <Button fx:id="btnScoreBoard" layoutX="467.0" layoutY="39.0" mnemonicParsing="false" onAction="#removeFocusFromButton" onMouseClicked="#goToScoreBoard" onMouseEntered="#enteredOnButton" onMousePressed="#pressedOnButton" onMouseReleased="#releasedOnButton" prefHeight="47.0" prefWidth="157.0" styleClass="menuButton" stylesheets="@../css/mainStyle.css" text="Tablica wyników" />
+      <Button fx:id="btnOptions" layoutX="674.0" layoutY="39.0" mnemonicParsing="false" onAction="#removeFocusFromButton" onMouseClicked="#goToOptions" onMouseEntered="#enteredOnButton" onMousePressed="#pressedOnButton" onMouseReleased="#releasedOnButton" prefHeight="47.0" prefWidth="157.0" styleClass="menuButton" stylesheets="@../css/mainStyle.css" text="Opcje" />
+      <Button fx:id="btnExitGame" layoutX="701.0" layoutY="644.0" mnemonicParsing="false" onAction="#removeFocusFromButton" onMouseClicked="#goToExitGame" onMouseEntered="#enteredOnButton" onMousePressed="#pressedOnButton" onMouseReleased="#releasedOnButton" prefHeight="47.0" prefWidth="157.0" styleClass="menuButton" stylesheets="@../css/mainStyle.css" text="Wyjdź z gry" />
+      <Pane id="newGamePanel" fx:id="paneNewGame" layoutX="82.0" layoutY="182.0" prefHeight="200.0" prefWidth="200.0" visible="false" />
+      <Pane id="loadGamePanel" fx:id="paneLoadGame" layoutX="311.0" layoutY="182.0" prefHeight="200.0" prefWidth="200.0" visible="false" />
+      <Pane id="scoreBoardPanel" fx:id="paneScoreBoard" layoutX="82.0" layoutY="400.0" prefHeight="200.0" prefWidth="200.0" visible="false" />
+      <Pane id="optionsPanel" fx:id="paneOptions" layoutX="311.0" layoutY="400.0" prefHeight="200.0" prefWidth="200.0" visible="false" />
    </children>
 </AnchorPane>
