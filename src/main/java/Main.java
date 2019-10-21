@@ -1,23 +1,35 @@
+
+import configuration.LangProperties;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main extends Application {
 
-    //static Logger LOGGER = Logger.getLogger(Main.class.getName());
+    static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+
     private static Scene scene;
+
+    private static final String PROPERTIES_PATH = "src/main/text.properties";
+    private static final String FXML_MAIN = "fxml/mainScreen.fxml";
+
 
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/mainScreen.fxml"));
+            LOGGER.log(Level.INFO, "Application start!");
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(FXML_MAIN));
             scene = new Scene(root);
             scene.getStylesheets().add(
                    getClass().getResource("/css/mainStyle.css").toExternalForm());
@@ -30,12 +42,18 @@ public class Main extends Application {
         }
     }
 
-//    private  Parent loadFXML(String fxml) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.getClass().getResource( fxml ));
-//        return fxmlLoader.load();
-//    }
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws IOException {
+        Path path = Paths.get(PROPERTIES_PATH).toAbsolutePath();
+        if (Files.exists(path)) {
+            try (BufferedReader bufferedReader = Files.newBufferedReader(path)) {
+                LangProperties.TEXT_FILLER.load(bufferedReader);
+                LOGGER.log(Level.INFO, "Text file loaded!");
+            }
+        } else{
+            LOGGER.log(Level.WARNING, "Missing text file!!!!");
+        }
         launch(args);
-       // LOGGER.log(Level.INFO, "Application close!");
+        LOGGER.log(Level.INFO, "Application close!");
     }
 }

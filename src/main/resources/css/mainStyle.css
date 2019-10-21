@@ -1,3 +1,7 @@
+@font-face {
+    src: url('../css/kenvector_future.ttf');
+}
+
 #mainPanel{
     -fx-background-image: url(../image/darkPurple.png);
     -fx-background-repeat: repeat;
@@ -8,7 +12,8 @@
 .menuButton{
     /*-fx-background-image: url(../image/grey_button15.png);*/
     -fx-background-radius: 10 10 10 10;
-
+    -fx-font-family: 'Kenvector Future';
+    -fx-font-size: 14px;
 }
 
 #optionsPanel {
@@ -22,5 +27,4 @@
 }
 #loadGamePanel{
     -fx-background-color: red
-
 }
