@@ -28,12 +28,12 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        if(!LangProperties.TEXT_FILLER.isEmpty()){
-            btnNewGame.setText(LangProperties.TEXT_FILLER.getProperty("btnNewGame"));
-            btnLoadGame.setText(LangProperties.TEXT_FILLER.getProperty("btnLoadGame"));
-            btnOptions.setText(LangProperties.TEXT_FILLER.getProperty("btnOptions"));
-            btnScoreBoard.setText(LangProperties.TEXT_FILLER.getProperty("btnScoreBoard"));
-            btnExitGame.setText(LangProperties.TEXT_FILLER.getProperty("btnExitGame"));
+        if(!LangProperties.getLangProperties().isEmpty()){
+            btnNewGame.setText(LangProperties.getLangProperties().getProperty("btnNewGame"));
+            btnLoadGame.setText(LangProperties.getLangProperties().getProperty("btnLoadGame"));
+            btnOptions.setText(LangProperties.getLangProperties().getProperty("btnOptions"));
+            btnScoreBoard.setText(LangProperties.getLangProperties().getProperty("btnScoreBoard"));
+            btnExitGame.setText(LangProperties.getLangProperties().getProperty("btnExitGame"));
         }
         mainScreenPanel.requestFocus();
     }

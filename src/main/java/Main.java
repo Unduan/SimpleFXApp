@@ -1,5 +1,6 @@
 
 import configuration.LangProperties;
+import configuration.LanguageEnum;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,7 +22,6 @@ public class Main extends Application {
 
     private static Scene scene;
 
-    private static final String PROPERTIES_PATH = "src/main/text.properties";
     private static final String FXML_MAIN = "fxml/mainScreen.fxml";
 
 
@@ -44,15 +44,7 @@ public class Main extends Application {
 
 
     public static void main(String[] args) throws IOException {
-        Path path = Paths.get(PROPERTIES_PATH).toAbsolutePath();
-        if (Files.exists(path)) {
-            try (BufferedReader bufferedReader = Files.newBufferedReader(path)) {
-                LangProperties.TEXT_FILLER.load(bufferedReader);
-                LOGGER.log(Level.INFO, "Text file loaded!");
-            }
-        } else{
-            LOGGER.log(Level.WARNING, "Missing text file!!!!");
-        }
+        LangProperties.setLangProperties(LanguageEnum.ENGLISH);
         launch(args);
         LOGGER.log(Level.INFO, "Application close!");
     }
